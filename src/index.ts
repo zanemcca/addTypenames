@@ -1,0 +1,2 @@
+
+export { addTypenames } from './addTypenames';
