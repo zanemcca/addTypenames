@@ -4,11 +4,12 @@
   "description": "Recursively adds __typename to the input using a passed in schema",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "prepublish": "yarn build",
+  "prepublish": "yarn clean && yarn build",
   "author": "Zane McCaig",
   "license": "MIT",
   "private": false,
   "scripts": {
+    "clean": "rm -rf dist",
     "test": "jest",
     "build": "tsc"
   },
