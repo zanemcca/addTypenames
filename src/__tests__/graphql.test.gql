@@ -1,0 +1,62 @@
+
+scalar DateTime
+scalar JSONObject
+
+interface Animal {
+    id: ID!
+    name: String!
+    cost: Float!
+}
+
+type Cow implements Animal {
+    id: ID!
+    name: String!
+    cost: Float!
+    hayRequirements: Float!
+    milkOutput: Float!
+}
+
+type Chicken implements Animal {
+    id: ID!
+    name: String!
+    cost: Float!
+    feedRequirements: Float!
+    eggOutput: Int!
+}
+
+enum EquipmentType {
+    Tractor
+    Truck
+}
+
+type Equipment {
+    id: ID!
+    brand: String!
+    type: EquipmentType!
+    cost: Float
+    maintenanceCost: Float
+    fuelCost: Float
+    purchasedOn: DateTime!
+    info: JSONObject
+    soldOn: DateTime
+}
+
+type Building {
+    id: ID!
+    description: String!
+    cost: Float
+}
+
+type Farm {
+    id: ID!
+    assets: [Asset!]!
+    animals: [Animal!]
+    buildings: [Building!]
+    equipment: [Equipment!]
+}
+
+union Asset = Equipment | Building
+
+type Query {
+    farms: [Farm!]!
+}

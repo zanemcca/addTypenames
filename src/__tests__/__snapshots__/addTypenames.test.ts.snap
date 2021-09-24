@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addTypenames advanced usage using propertyOfParent and parentTypeName errors should complain about the parentTypeName field being missing 1`] = `"Expected a parentTypeName to be given when propertyOfParent is given!"`;
+
+exports[`addTypenames advanced usage using propertyOfParent and parentTypeName errors should complain about the propertyOfParent field being missing 1`] = `"Expected a propertyOfParent to be given when parentTypeName is given!"`;
+
+exports[`addTypenames errors async resolvers should complain about the Animal resolver using Promises 1`] = `"The resolveType for Animal returns a promise but only synchronous resolvers are supported!"`;
+
+exports[`addTypenames errors missing resolvers should complain about the Animal resolver not being present 1`] = `"No resolveType found for the interface Animal"`;
+
+exports[`addTypenames heuristic approach using getCandidateTypes errors should complain about there being no typename matches 1`] = `
+"No viable typenames found!
+
+This is the relevant object given
+{
+	\\"id\\": 1,
+	\\"name\\": \\"Henrieta\\",
+	\\"cost\\": 45,
+	\\"feedRequirements\\": 45,
+	\\"eggOutput\\": 30,
+	\\"notAField\\": \\"this is just some extra field that does not exist in the model\\"
+}
+
+Hint: Try adding a __typename on your initial input object or pass in a propertyOfParent & parentTypeName.
+"
+`;
+
+exports[`addTypenames heuristic approach using getCandidateTypes errors should complain about there being too many possible typename matches 1`] = `
+"Cannot resolve the __typename between these possible types!
+
+    Animal
+	Cow
+	Chicken
+
+
+This is the relevant object given
+{
+	\\"id\\": 1,
+	\\"name\\": \\"Henrieta\\"
+}
+
+Hint: Try adding a __typename on your initial input object or pass in a propertyOfParent & parentTypeName.
+"
+`;
