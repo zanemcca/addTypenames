@@ -1,3 +1,4 @@
+# add-typenames
 
 `addTypenames` copies a given input object and recursively adds GraphQL `__typenames` to the output.
 
