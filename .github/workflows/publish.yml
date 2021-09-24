@@ -15,6 +15,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Build the library
+        run: yarn build
+
       - uses: JS-DevTools/npm-publish@v1
         with:
             token: ${{ secrets.NPM_TOKEN }}
