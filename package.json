@@ -2,8 +2,10 @@
   "name": "addTypenames",
   "version": "0.1.0",
   "description": "Recursively adds __typename to the input using a passed in schema",
-  "main": "./build/index.js",
-  "author": "Zane McCaig <zanemccaig@gmail.com>",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "prepublish": "yarn build",
+  "author": "Zane McCaig",
   "license": "MIT",
   "private": false,
   "scripts": {
