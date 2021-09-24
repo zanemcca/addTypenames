@@ -1,7 +1,7 @@
-import * as _reduce from 'lodash/reduce';
-import * as _map from 'lodash/map';
-import * as _keys from 'lodash/keys';
-import * as _filter from 'lodash/filter';
+import _reduce from 'lodash/reduce';
+import _map from 'lodash/map';
+import _keys from 'lodash/keys';
+import _filter from 'lodash/filter';
 import {
     GraphQLSchema,
     GraphQLType,

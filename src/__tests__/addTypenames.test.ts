@@ -1,7 +1,7 @@
 import { GraphQLSchema, buildSchema } from 'graphql';
 import { DateTimeResolver, JSONObjectResolver } from 'graphql-scalars';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import * as _map from 'lodash/map';
+import _map from 'lodash/map';
 import { readFileSync } from 'fs';
 
 import { addTypenames } from '../addTypenames';
