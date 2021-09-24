@@ -1,6 +1,6 @@
 {
   "name": "add-typenames",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Recursively adds __typename to the input using a passed in schema",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
