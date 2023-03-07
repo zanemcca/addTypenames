@@ -92,7 +92,7 @@ describe('addTypenames', () => {
         });
     });
 
-    it('should find the typenames of the children', async () => {
+    it('should find the typenames of the children', () => {
         const input = {
             __typename: 'Farm',
             buildings: [data.house, data.barn],
@@ -112,7 +112,7 @@ describe('addTypenames', () => {
         });
     });
 
-    it('should resolve scalars', async () => {
+    it('should resolve scalars', () => {
         const input = {
             __typename: 'Farm',
             equipment: [
@@ -135,7 +135,7 @@ describe('addTypenames', () => {
         });
     });
 
-    it('should resolve interfaces', async () => {
+    it('should resolve interfaces', () => {
         const input = {
             __typename: 'Farm',
             animals: [data.chicken, data.cow],
@@ -156,7 +156,7 @@ describe('addTypenames', () => {
         });
     });
 
-    it('should resolve unions', async () => {
+    it('should resolve unions', () => {
         const input = {
             __typename: 'Farm',
             assets: [data.house, data.tractor, data.barn],
@@ -221,7 +221,7 @@ describe('addTypenames', () => {
     });
 
     describe('heuristic approach using getCandidateTypes', () => {
-        it('should find the typename for a plain object when there is no ambiguity', async () => {
+        it('should find the typename for a plain object when there is no ambiguity', () => {
             const input = {
                 id: 5,
                 brand: 'International',
@@ -232,7 +232,7 @@ describe('addTypenames', () => {
         });
 
         describe('errors', () => {
-            it('should complain about there being too many possible typename matches', async () => {
+            it('should complain about there being too many possible typename matches', () => {
                 const input = {
                     id: data.chicken.id,
                     name: data.chicken.name,
@@ -240,7 +240,7 @@ describe('addTypenames', () => {
                 expect(() => addTypenames({ item: input, schema })).toThrowErrorMatchingSnapshot();
             });
 
-            it('should complain about there being no typename matches', async () => {
+            it('should complain about there being no typename matches', () => {
                 const input = {
                     ...data.chicken,
                     notAField: 'this is just some extra field that does not exist in the model',
@@ -266,7 +266,7 @@ describe('addTypenames', () => {
                 });
             });
 
-            it('should complain about the Animal resolver using Promises', async () => {
+            it('should complain about the Animal resolver using Promises', () => {
                 const input = {
                     __typename: 'Farm',
                     animals: [data.chicken],
@@ -288,7 +288,7 @@ describe('addTypenames', () => {
                 });
             });
 
-            it('should complain about the Animal resolver not being present', async () => {
+            it('should complain about the Animal resolver not being present', () => {
                 const input = {
                     __typename: 'Farm',
                     animals: [data.chicken],
