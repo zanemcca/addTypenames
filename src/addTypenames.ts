@@ -53,12 +53,12 @@ export const getCandidateTypes = ({ item, schema }: AddTypenamesProps) => {
     return candidateTypes;
 };
 
-export const addTypenames = ({
+export function addTypenames<T = any>({
     item,
     schema,
     propertyOfParent,
     parentTypeName,
-}: AddTypenamesProps): Promise<any> => {
+}: AddTypenamesProps): T {
     if (Array.isArray(item)) {
         throw new Error(`addTypenames expects objects to be passed in not arrays!`);
     }
