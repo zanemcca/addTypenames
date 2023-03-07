@@ -53,12 +53,12 @@ export const getCandidateTypes = ({ item, schema }: AddTypenamesProps) => {
     return candidateTypes;
 };
 
-export const addTypenames = ({
+export function addTypenames<T = any>({
     item,
     schema,
     propertyOfParent,
     parentTypeName,
-}: AddTypenamesProps): Promise<any> => {
+}: AddTypenamesProps): T {
     if (Array.isArray(item)) {
         throw new Error(`addTypenames expects objects to be passed in not arrays!`);
     }
@@ -128,7 +128,7 @@ ${errorHint}`);
                 // TODO inspect the options using the same field matching logic as is found in getCandidateTypes
                 throw new Error(`No resolveType found for the interface ${namedType.name}`);
             }
-            const typename = namedType.resolveType(item, null, {} as any, namedType);
+            const typename = namedType.resolveType(item, null, {} as T, namedType);
             if (!typename) {
                 throw new Error(`Unable to resolve type for abstract type ${namedType.name}`);
             }
@@ -180,6 +180,6 @@ ${errorHint}`);
         },
         {
             __typename: type.name,
-        } as any,
+        } as T,
     );
 };
